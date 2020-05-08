@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Airbnb';
+  src: local('Airbnb'), url(./fonts/AirbnbCerealBlack.ttf) format('truetype');
+}
+
+.App {
+  text-align: center;
+  font-family: Airbnb;
+}
+
+
+
+
+#Dashboard {
+  margin-top: 0;
+}
+
+.bar{
+  background-color: black;
+}
+
+
+.right-tab{
+  margin-top: '500px';
+}
+
+
+
+
+
+

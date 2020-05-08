@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Airbnb;
+  src: local('Airbnb'), url(./fonts/AirbnbCerealBlack.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'Airbnb';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
