@@ -28,6 +28,10 @@ import '../App.css'
 
 const theme = createMuiTheme({
     palette: {
+      text: {
+        primary: "#ffffff",
+        secondary: "#00000"
+      },
       primary: {
         // light: will be calculated from palette.primary.main,
         main: '#3a3a3c',
@@ -55,7 +59,8 @@ const theme = createMuiTheme({
     
   }});
 
-const icons = [<HomeIcon />,<FormatListBulletedRoundedIcon />,<PersonRoundedIcon />,<DeployIcon />,<ProjectsIcon />,<TodayRoundedIcon />,<PeopleAltRoundedIcon />,<AllInboxIcon />];
+const icons = [<HomeIcon style={{ fill: "#ffffff" }}/>,<FormatListBulletedRoundedIcon style={{ fill: "#ffffff" }}/>,<PersonRoundedIcon style={{ fill: "#ffffff" }}/>,<DeployIcon style={{ fill: "#ffffff" }}/>,<ProjectsIcon style={{ fill: "#ffffff" }}/>,
+                <TodayRoundedIcon style={{ fill: "#ffffff" }} />,<PeopleAltRoundedIcon style={{ fill: "#ffffff" }} />,<AllInboxIcon style={{ fill: "#ffffff" }} />];
 
 const drawerWidth = 240;
 
@@ -71,14 +76,21 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1%',
     marginLeft: '10%',
     marginRight: '20%',
-    boxShadow: 0,
+    shadows: 0,
+    borderRadius: 10,
+    
   },
   drawer: {
     width: '10%',
     flexShrink: 0,
+    fontSize: '6rem',
+    fontFamily: 'Airbnb',
+    justifyContent: 'right',
   },
   drawerPaper: {
     width: drawerWidth,
+    fontSize: '60px',
+    
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
@@ -90,6 +102,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+  const denseStyle = {
+    minHeight:"60px",
+    lineHeight: "20px",      // Smaller: Height of menu item row
+    fontSize: "2rem",        // Smaller font
+    // color:"#0000ff"
+  };
+
 export default function LeftDrawer() {
   const classes = useStyles();
 
@@ -97,7 +116,7 @@ export default function LeftDrawer() {
     <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} elevation={0} boxShadow={0} >
         <Toolbar>
           <Typography variant="h6" noWrap>
             Home
@@ -116,8 +135,8 @@ export default function LeftDrawer() {
         <List>
           {['Home', 'My Tasks', 'Profile', 'Deploy', 'Projects', 'Events', 'Users', 'Resources'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{icons[index]}</ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemIcon style={denseStyle} >{icons[index]}</ListItemIcon>
+              <ListItemText style={denseStyle} primary={text} />
             </ListItem>
           ))}
         </List>
