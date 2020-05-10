@@ -23,6 +23,7 @@ import grey from '@material-ui/core/colors/grey';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { shadows } from '@material-ui/system';
 import '../App.css'
+import logo from '/Users/japneet/Desktop/DevClubDash/devclubdash/src/components/Untitled.png';
 
 
 
@@ -86,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '6rem',
     fontFamily: 'Airbnb',
     justifyContent: 'right',
+    zIndex: '1',
   },
   drawerPaper: {
     width: drawerWidth,
@@ -103,11 +105,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
   const denseStyle = {
-    minHeight:"60px",
+    minHeight:'4rem',
     lineHeight: "20px",      // Smaller: Height of menu item row
-    fontSize: "2rem",        // Smaller font
+    fontSize: "4px", 
     // color:"#0000ff"
   };
+
+ 
+  const imageStyle = {
+      padding: '0px',
+      marginLeft: '0px',
+      marginTop: '0px',
+      width: drawerWidth,
+      marginLeft: '-30px',
+};
 
 export default function LeftDrawer() {
   const classes = useStyles();
@@ -130,8 +141,9 @@ export default function LeftDrawer() {
           paper: classes.drawerPaper,
         }}
         anchor="left"
-      >
+      ><img src={logo} style={imageStyle} />
         <div className={classes.toolbar} />
+        
         <List>
           {['Home', 'My Tasks', 'Profile', 'Deploy', 'Projects', 'Events', 'Users', 'Resources'].map((text, index) => (
             <ListItem button key={text}>

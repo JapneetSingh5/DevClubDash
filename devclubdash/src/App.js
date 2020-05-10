@@ -7,12 +7,15 @@ import './fonts/AirbnbCerealBold.ttf'
 import './fonts/AirbnbCerealExtraBold.ttf'
 import './fonts/AirbnbCerealLight.ttf'
 import './fonts/AirbnbCerealMedium.ttf'
-
+import DashLogo from './components/DashLogo';
 
 export default function App() {
     
     return(
+       <React.Fragment>
        <LeftDrawer />
+       </React.Fragment>
+     
     );
   
   };
